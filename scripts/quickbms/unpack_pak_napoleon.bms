@@ -1,0 +1,13 @@
+IDString "\x53\x4D\x41" 
+
+get unk short
+get unk short
+get unk long
+get num long
+
+for i = 0 < num
+    getdstring fname 30 
+        
+    get offset long
+    clog fname offset fsize unpacked_size
+next i

@@ -1,0 +1,39 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint i, pos;
+
+CHAR Magic[4];
+UINT16 Unknowns;
+UBYTE Unknown;
+UINT Unknown;
+UINT FileCount;
+
+typedef struct {
+  CHAR Name[30];
+  UINT Offset;
+} FILE_REC; 
+
+FILE_REC FileRec[FileCount];
+
+pos = FileSize();
+
+for (i = FileCount - 1; i > 0; --i)
+{
+  FSeek(FileRec[i].Offset);
+  struct {
+    CHAR Name[32];
+    BYTE Data[pos - FileRec[i].Offset - 32]; 
+  } FILE;
+  pos = FileRec[i].Offset;
+};

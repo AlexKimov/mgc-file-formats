@@ -1,0 +1,132 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+char name[32];
+uint size;
+char name2[32];
+uint size;
+
+local string aname;
+local uint vnum, fnum, i;
+
+local uint offset;
+local uint pos;
+struct {
+  char name3[32];
+  uint size;
+
+  while (1) {
+  aname = ReadString(FTell());
+  if (Strstr(aname, "mdl") == -1 && Strstr(aname, "MDL") == -1)  break;
+  struct {
+    char name4[32];
+    uint size;
+
+    offset = FTell();
+    char name5[4];
+    uint size;
+    uint size0;
+    uint mnum;
+    uint size;
+    float size;
+    uint size;
+    float size;
+
+    uint size;
+    float size;
+    uint size;
+    uint size;
+    uint size;
+    uint size;
+
+    pos = FTell();
+
+    while (1) 
+    {
+      struct {
+        uint num;
+        struct {
+          uint unk;
+          float unk2[17];
+          uint length;
+          uint length;
+          char name[36];
+        } A[num];
+
+        uint meshnum;
+        uint s[meshnum];
+
+        local uint arr[meshnum];
+        local uint pos = 1, y;     
+        local byte existed;  
+
+        arr[0] = s[0];
+        for (i = 1; i < meshnum; ++i)
+        { 
+          for (y = 0; y < pos; ++y) 
+          {
+            existed = false;
+            if (arr[y] == s[i]) { 
+              existed = true;
+              break;
+            }
+          } 
+          if (!existed) 
+          {
+            arr[pos] = s[i]; 
+            pos += 1;
+          }  
+        };
+
+        struct {
+            uint num;            
+            uint unk; 
+            uint a2[num];    
+
+            if (unk)
+            float rt[16];              
+
+            struct {
+              uint unk;
+              if (unk != 1) { 
+                uint vertexnum;
+                uint facenum;
+                uint index;
+
+                struct {
+                  float x;
+                  float y;
+                  float z;
+
+                  float x;
+                  float y;
+                  float y;
+  
+                  float u;
+                  float v;
+                } VERTEX[vertexnum];
+
+                struct {
+                uint16 i;
+                  } FACE[facenum];
+              } else {
+                  byte er[128];
+              }
+            } O[num] <optimize=false>;
+        } MESH[pos] <optimize=false>;
+      } M;
+      if (FTell() >= (pos + size0 - 56)) break;
+    };
+  } MODEL;
+  };
+} RR[100] <optimize=false>;

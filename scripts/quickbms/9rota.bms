@@ -1,0 +1,22 @@
+# Game: 9rota (script 0.1)
+# Description:
+# script to unpack .pak archive
+# Link:
+
+ComType zlib
+
+GoTo 5 // magic and version vars
+get COUNT long // number of files
+GoTo 13 // size
+
+for i = 0 < COUNT
+    // get 
+    get Length byte
+    GetDString NAME Length
+    get UNPACKED_SIZE long
+    get SIZE long  
+    get OFFSET long 
+    // unpack
+    Clog NAME OFFSET SIZE UNPACKED_SIZE
+next i 
+

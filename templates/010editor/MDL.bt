@@ -1,0 +1,151 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint modelCount, cnt;
+local string str, str2;
+
+typedef struct {
+  FLOAT X;
+  FLOAT Y;
+  FLOAT Z;
+} VECTOR_3F;
+
+typedef struct {
+  FLOAT X;
+  FLOAT Y;
+} VECTOR_2F;
+
+typedef struct {
+  UINT16 I1;
+  UINT16 I2;
+  UINT16 I3;
+} VECTOR_3UI16;
+
+CHAR Name[32];
+UINT A;
+
+
+CHAR Name1[31];
+UBYTE A;
+UINT A;
+
+while (!FEof())
+  struct {
+    CHAR Name2[31];
+
+    UBYTE Unknown;
+    UINT ModelCount;
+
+    while (1) 
+    {
+      Strncpy(str, ReadString(FTell()), 4);
+      Strncpy(str2, Name2, 4);
+      if (str != str2) break; 
+
+    struct {
+      CHAR Name3[30];
+      UINT16 A;
+      UINT16 SectionSize;
+      UBYTE A;
+      UBYTE A;
+      CHAR Name4[4];
+      UINT A;
+      UINT SectionSize;
+
+      UINT Count;
+      UINT Count;
+      FLOAT A;
+      UINT Count0;
+      FLOAT A;
+      UINT Count02;
+      FLOAT A;
+      FLOAT A;
+      FLOAT A;
+      FLOAT A;
+      FLOAT A;
+
+      if (Count0 > 0 || Count02 > 0)
+        cnt = 2;
+      else
+        cnt = 1;
+
+      struct {
+        UINT Count;
+        struct {
+          UINT Size;
+          FLOAT A;
+          FLOAT A;
+          FLOAT A;
+          UINT Unknown;
+          FLOAT A;
+          FLOAT A;
+          FLOAT A;
+          UINT Unknown;
+          UINT Unknown;
+          UINT Unknown;
+          UINT Unknown;
+          UINT Unknown;
+          FLOAT A;
+          FLOAT A;
+          FLOAT A;
+          UINT Unknown;
+          FLOAT A;
+          FLOAT A;
+          FLOAT A;
+          CHAR TextureName[36];
+        } MATERIAL[Count];
+
+        UINT Unknown;
+        UINT Unknown;
+        UINT MeshCount;
+        UINT Unknown;
+        UINT Unknown;
+        UINT Unknown;
+        UINT Unknown;
+
+        FLOAT R[MeshCount]; 
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+        FLOAT A;
+
+        UINT Unknown;
+        UINT Unknown;
+        UINT Unknown;
+
+        struct {
+          UINT Unknown;
+          UINT VertexCount;
+          UINT FaceCount;
+          UINT Index;
+
+          struct {
+            VECTOR_3F Coordinates; 
+            VECTOR_3F Color;
+            VECTOR_2F TextureCoordinates;
+          } VERTEX[VertexCount];
+
+          struct {
+            UINT16 Index; 
+          } FACE[FaceCount];
+        } MESH[MeshCount] <optimize=false>;
+      } LOD[cnt] <optimize=false>;
+    } MODEL;
+  }
+} OBJECTS;
