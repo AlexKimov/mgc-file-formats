@@ -1,0 +1,43 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+uint vertexNum;
+uint num;
+uint unk;
+
+struct {
+  uint index;
+  string name;
+  float matrix4x4[16];
+} bones[num] <optimize=false>;
+
+struct {
+  float x;
+  float y;
+  float z;
+  float x;
+  float y;
+  float z;
+  float u;
+  float v;
+  uint boneNum;
+  struct {
+    uint index;
+    float weight;
+  } BONE[boneNum];
+} vertex[vertexNum] <optimize=false>;
+
+string matName;
+uint indexNum;
+
+uint16 indexes[indexNum];

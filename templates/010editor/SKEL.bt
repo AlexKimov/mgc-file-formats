@@ -1,0 +1,33 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+uint boneNum;
+
+struct {
+  string name;
+  uint frameNum;
+  struct {
+    float time;
+    float x;
+    float y;
+    float z;
+  } position[frameNum];
+  uint frameNum;
+  struct {
+    float time;
+    float x;
+    float y;
+    float z;
+   float w;
+  } rotation[frameNum];
+} BONE[boneNum] <optimize=false>;
