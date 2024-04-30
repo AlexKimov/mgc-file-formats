@@ -1,0 +1,242 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint size, i, boneNum, objectNum, meshNum, ofs;
+
+char magic[4];
+uint sectionNum;
+
+typedef struct {
+  uint type;
+  uint size;
+  uint offset;
+  uint reserved;
+} sectionRec;
+
+sectionRec recs[sectionNum];
+
+for (i = 0; i < sectionNum; ++i)
+{
+  switch (recs[i].type)  
+  { 
+     case 5:
+         size = recs[i].size;
+       break;
+     case 2:
+       break;
+     case 3:
+       ofs = FTell();
+       FSeek(recs[i].offset);
+       objectNum = ReadUInt(FTell());   
+       struct {
+         uint a;
+         uint a;
+         float a;
+         float a;
+         float a;
+         float a;
+         float a;
+         float a;
+         meshNum = ReadUInt(FTell());
+         uint a;
+         uint a;
+         FSkip(recs[i].size - 36); 
+       } SECTION_3;
+       FSeek(ofs);  
+       break;
+     case 61441:
+       break; 
+  };
+}
+
+typedef struct (uint type) {
+  if (type == 1)
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+  }
+  if (type == 3)
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float z;
+    float z;
+    float z;
+  }
+  if (type == 4)
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float z;
+  }
+  if (type == 7)
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float y;
+  }
+  if (type == 24) 
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float y;
+  }
+  if (type == 28) 
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float y;
+  }
+  if (type == 30) 
+  {
+    float x;
+    float y;
+    float z;
+    float x;
+    float y;
+    float z;
+    float u;
+    float v;
+    int b;
+    int c;
+    int c;
+  }
+} vertex;
+
+struct {
+  char name[242];
+  int type;
+    struct {
+      int faceNum;
+      int vertexNum;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      int unk;
+      float a[32];
+
+      vertex vertexes(type)[vertexNum];
+
+      struct {
+        uint16 i1;
+        uint16 i2;
+        uint16 i3;
+      } face[faceNum];
+    } mesh[meshNum] <optimize=false>;
+} object[objectNum] <optimize=false>;
+
+while (size > 0)
+{
+    struct {
+      char name[64];
+      float position[3];
+      float rotation[4];
+    } bone;
+   size -= 92;
+}
+
+uint unk;
+uint num;
+if (num)
+  uint a[30];
+else
+  uint a[6];
+
+struct {
+  char name[58];
+  uint a;
+  uint a;
+  uint16 a;
+  uint tnum;
+
+  struct {
+    uint length;
+    char tname[40];
+  } texture[tnum];
+
+  float f[160];
+} material[4] <optimize=false>;

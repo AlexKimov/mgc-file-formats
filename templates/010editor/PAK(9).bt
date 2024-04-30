@@ -1,0 +1,40 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint i;
+
+char Magic[3];
+UINT16 Version;
+UINT FileCount;
+UINT Size;
+
+typedef struct {
+    UBYTE Length;
+    char FileName[Length];
+    UINT UnpackedDataSize;
+    UINT DataSize;
+    UINT Offset;
+} FILE_REC;
+
+struct {
+  FILE_REC Records[FileCount] <optimize=false>;
+} TABLE;
+
+struct {
+  for (i = 0; i < FileCount; ++i) {
+    FSeek(TABLE.Records[i].Offset);
+    struct {
+      BYTE Data[TABLE.Records[i].DataSize];
+    } FILE;
+  }
+} FILES;

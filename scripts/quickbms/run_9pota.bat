@@ -1,0 +1,1 @@
+F:\git\qbms\quickbms.exe -Y -F "*.pak" 9rota.bms "F:\Games\9\9 РОТА" unpacked_9

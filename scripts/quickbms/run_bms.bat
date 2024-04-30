@@ -1,1 +1,0 @@
-quickbms.exe -Y -F "*.pak" 9rota.bms "C:\Games\ND Games\9 РОТА\Data" unpacked
