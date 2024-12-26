@@ -12,10 +12,10 @@
 //------------------------------------------------
 
 char magic[4];
-BigEndian();
-uint unk;
+
+byte unk[3];
+uint unNum; 
 uint filenum;  
-byte e[3];
 
 LittleEndian();
 struct {
