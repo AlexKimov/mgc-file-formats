@@ -1,13 +1,36 @@
-IDString "\x53\x4D\x41" 
+IDString "\x50\x41\x43\x4B" 
 
-get unk short
-get unk short
-get unk long
+endian little
+
+GoTo 11 
 get num long
 
+# process file/section entries
+log MEMORY_FILE 0 200000
+
 for i = 0 < num
-    getdstring fname 30 
-        
-    get offset long
-    clog fname offset fsize unpacked_size
+    GetDString fname 30 
+    Get offset long
+    
+    PutDString fname 30 MEMORY_FILE
+    Put offset long MEMORY_FILE
+next i
+
+GoTo 0 MEMORY_FILE
+math num -= 1
+
+# unpack files or whatever
+
+for i = 0 < num
+    GetDString fname 30 MEMORY_FILE
+    Get offset long MEMORY_FILE
+    
+    SavePos offs MEMORY_FILE
+    GoTo 30 MEMORY_FILE SEEK_CUR  
+    Get offset2 long MEMORY_FILE
+    GoTo offs MEMORY_FILE
+    
+    XMath fsize "offset2 - offset"
+  
+    Log fname offset fsize
 next i

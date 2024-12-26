@@ -1,1 +1,1 @@
-F:\git\qbms\quickbms.exe -K -d -e -Y -F "*.pak" unpack_pak.bms "F:\Games\История войн - Наполеон" unpacked_napoleon
+F:\git\qbms\quickbms.exe -w -K -d -e -Y -F "*.pak" unpack_pak_napoleon.bms "F:\Games\История войн - Наполеон" unpacked_napoleon
