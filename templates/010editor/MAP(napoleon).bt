@@ -1,0 +1,152 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+while (!FEof()) 
+{
+  struct {
+    uint type;
+    char name[8];
+
+    int unk;
+    int unk;
+    int unk;
+    int unk;
+    int unk;
+
+    uint size; 
+
+    int unk;
+    int unk;
+    int unk;
+
+    int num;
+    byte l;
+
+    switch (type)
+    {
+       case 0:
+
+         uint num1;
+         uint num2;
+         float x;
+         float y;
+         float z;
+
+         struct {
+           struct {
+              int unk;
+             int unk;
+             int unk;
+             int unk;
+             int unk;
+           } MESH[num1];
+         } GROUP[num1];
+         break;
+       case 1:   
+         uint unk;
+         uint num;
+
+         struct {
+           char name1[62];      
+           char name2[175];
+           char name3[35];
+           int unk;
+           float unk;
+           float unk;
+           int unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk3[30];
+
+           if (name1 == "Tree")
+             int unk4[11];
+           else
+            int unk4[26];
+
+         } MODEL[num] <optimize=false>;   
+
+         
+
+         break;
+       case 2:      
+         byte data[size];
+
+         break;
+       case 3:  
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+         break;
+       case 4:
+         struct {
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           float unk;
+           int unk;
+           int unk;
+           int unk;
+        } D1[1265]; // 7365, 1265
+          
+        uint num;
+        struct {
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           int unk;
+           float unk;
+           float unk;
+        } D2[num];
+
+         break;
+    };
+  } SECTION;
+}
