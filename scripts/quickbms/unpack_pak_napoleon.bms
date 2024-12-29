@@ -17,7 +17,7 @@ for i = 0 < num
 next i
 
 GoTo 0 MEMORY_FILE
-math num -= 1
+Math num -= 1
 
 # unpack files or whatever
 
@@ -31,6 +31,5 @@ for i = 0 < num
     GoTo offs MEMORY_FILE
     
     XMath fsize "offset2 - offset"
-  
     Log fname offset fsize
 next i
